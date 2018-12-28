@@ -1,3 +1,3 @@
 ## economyMonitor
-Dashboard based on R Shiny. 
-Access it [here](https://morekoha.shinyapps.io/globalEconomyMonitor)!
+Dashboard of economic development parameters of different countries.  
+Access the shiny app [here](https://morekoha.shinyapps.io/globalEconomyMonitor)!
