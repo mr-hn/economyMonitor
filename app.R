@@ -2,7 +2,8 @@ library(shiny)
 library(tidyverse)
 library(readxl)
 library(plotly)
-library(shinyjs)
+library(shinyjs) # For things like hiding blocks dynamically
+library(shinyWidgets)
 
 # Data Read ---------------------------------------------------------------
 country_code <- read_csv("data/country_code.csv") %>% 
@@ -21,7 +22,7 @@ for (i in seq_along(files)) {
   if (file.exists(full_path)) {
     assign(files[i], read_excel(full_path))
     assign(files[i], get(files[i]) %>% 
-             rename(year = "X__1") %>% 
+             rename(year = "...1") %>% 
              slice(2:n()) %>%
              gather(-year, key = "country", value = "value") %>% 
              inner_join(country_code, by = "country") %>% 
